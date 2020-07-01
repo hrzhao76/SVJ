@@ -32,4 +32,18 @@ Please make sure you let "shower = Pythia8" and "detector = Delphes".
 
 Then, editing cards: run_card.dat, param_card.dat, pythia8_card.dat, delphes_card.dat #discuss the seting detail 
 
+delphes_card
 
+```
+# Jet finder
+
+set JetAlgorithm 6
+set ParameterR 0.5
+
+set JetPTMin 200.0
+
+# Fat Jet finder
+
+set JetPTMin 200.0
+
+```
