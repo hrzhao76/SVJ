@@ -30,6 +30,15 @@ Please make sure you let "shower = Pythia8" and "detector = Delphes".
 
 *type 1 => "detector = Delphes"
 
+Follow Haoran's precedure:
+
+```
+Another important thing to do is to change Particle Date Group(PDG) IDs of the dark particles in the LHE files for PYTHIA to be able to recognize and shower these properly.
+You'll find a madevent_interface.py from your downloaded files under the path /sig_schannel/bin, use it to replace the defalut python script under the same path you generated.
+What this do is to add a snippet of codes to swap PDG IDs by:
+sed -i 's/5000521/4900101/g' <LHE filename>
+```
+
 Then, editing cards: run_card.dat, param_card.dat, pythia8_card.dat, delphes_card.dat #discuss the seting detail 
 
 delphes_card
@@ -46,4 +55,15 @@ set JetPTMin 200.0
 
 set JetPTMin 200.0
 
+```
+
+```
+ === Results Summary for run: run_01 tag: tag_1 ===
+
+     Cross-section :   101.7 +- 0.2502 pb
+     Nb of events :  10000
+     Pythia8 merged cross-sections are:
+      > Merging scale = 45     : 45.366      +/- 0.0085  [pb]
+      > Merging scale = 67.5   : 46.292      +/- 0.0086  [pb]
+      > Merging scale = 90     : 46.393      +/- 0.0086  [pb]
 ```
